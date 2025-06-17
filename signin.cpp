@@ -5,7 +5,7 @@
 #include <cmath>
 #include <vector>
 #include <windows.h>
-#include <SFML/Graphics.hpp>
+//#include <SFML/Graphics.hpp>
 
 
 using namespace std;
@@ -31,7 +31,13 @@ void dot_sequence(string text){
     }
     setCursorVisible(true);
 }
-
+void number_sequence(int max) {
+    for (int i = 0; i <= max; i++){
+        cout << i;
+        cout << "\n";
+        this_thread::sleep_for(chrono::milliseconds(10));
+    }     
+}
 int main() {
     double counter = 0;
     string pass = "";
@@ -61,6 +67,7 @@ int main() {
         dot_sequence("Loading Software");
 
         cout << "\rLoading Complete. Please Proceed.\n\n";
+        number_sequence(100);
     }
     
     return 0;
