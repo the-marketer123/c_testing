@@ -3,14 +3,14 @@
 
 int main() 
 {
-    const Color darkGreen = {20, 160, 133, 255};
+    const Color backcolor = {170, 170, 255, 255};
     
     constexpr int screenWidth = 800;
     constexpr int screenHeight = 600;
     
     Ball ball;
     
-    InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
+    InitWindow(screenWidth, screenHeight, "ball");
     SetTargetFPS(60);
     
     while (!WindowShouldClose())
@@ -18,7 +18,7 @@ int main()
         ball.Update();
         
         BeginDrawing();
-            ClearBackground(darkGreen);
+            ClearBackground(backcolor);
             ball.Draw();
         EndDrawing();
     }
