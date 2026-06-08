@@ -11,7 +11,7 @@ int main()
     Ball ball;
     
     InitWindow(screenWidth, screenHeight, "ball");
-    SetTargetFPS(60);
+    SetTargetFPS(144);
     
     while (!WindowShouldClose())
     {
