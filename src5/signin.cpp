@@ -7,6 +7,11 @@
 #include <windows.h>
 //#include <SFML/Graphics.hpp>
 
+#include <random>
+
+std::random_device rd; 
+std::mt19937 gen(rd()); 
+std::uniform_int_distribution<> distr(60, 100);
 
 
 using namespace std;
@@ -36,11 +41,11 @@ void number_sequence(int max) {
     for (int i = 0; i <= max; i++){
         cout << i;
         cout << "\n";
-        this_thread::sleep_for(chrono::milliseconds(10));
+        this_thread::sleep_for(chrono::milliseconds(distr(gen)));
     }     
 }
 int main() {
-    double counter = 0;
+    //double counter = 0;
     string pass = "";
     cout << "\n\nWelcome \n\n";
     cout << "Please enter your password below:\n";
