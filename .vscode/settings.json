@@ -1,7 +1,18 @@
 {
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/*.o": true,
+		"**/*.exe": true,
+	},
     "files.associations": {
-        "iostream": "cpp",
-        "thread": "cpp",
-        "cmath": "cpp"
-    }
+        "raylib.h": "c",
+        "math.h": "c",
+        "blocks.h": "c"
+    },
+    "git.autoRepositoryDetection": false,
+    "git.enabled": false
 }
