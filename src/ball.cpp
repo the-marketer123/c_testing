@@ -19,12 +19,12 @@ Ball::Ball()
 
 static float bounce = 0;
 static float range = 200;
+static bool flip = false;
 
 void Ball::Update() 
 {
     const int screenHeight = GetScreenHeight();
     const int screenWidth = GetScreenWidth();
-    static bool flip = false;
 
     bounce += flip ? -0.1 : 0.1;
     y = (-1 * sin(bounce) * (range)) + screenHeight - radius - range/2;
@@ -50,9 +50,9 @@ void Ball::Update()
     range -= range <= 0 ? range : range / 75;
     speedX -= speedX <= 0.05 && speedX >= -0.05 ? speedX : speedX / 50;
 
-    std::string xtext = "X: " + std::to_string(x);
+    std::string xtext =      "X: " + std::to_string(x);
     std::string speedXtext = "X Speed: " + std::to_string(speedX);
-    std::string ytext = "Y: " + std::to_string(y);
+    std::string ytext =      "Y: " + std::to_string(y);
     std::string speedYtext = "Y Speed: " + std::to_string(range);
     DrawText(xtext.c_str(),      50, 5, 20, WHITE);
     DrawText(speedXtext.c_str(), 50, 30, 20, WHITE);
