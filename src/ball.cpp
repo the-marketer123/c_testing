@@ -9,6 +9,8 @@ std::random_device rd;
 std::mt19937 gen(rd()); 
 std::uniform_int_distribution<> distr(50, 150);
 
+//static Ball ball;
+
 Ball::Ball() 
     : x(400)
     , y(0)
@@ -47,7 +49,7 @@ void Ball::Update()
         speedX *= -1;
     }
     
-    range -= range <= 0 ? range : range / 75;
+    range -= range <= 0.5 ? range : range / 75;
     speedX -= speedX <= 0.05 && speedX >= -0.05 ? speedX : speedX / 50;
 
     std::string xtext =      "X: " + std::to_string(x);
@@ -67,5 +69,6 @@ void Ball::Update()
 
 void Ball::Draw() const
 {
-    DrawCircle(x, y, radius, WHITE);
+    DrawCircle(x, y, radius, BLACK);
+    DrawCircle(x, y, radius-2.5, WHITE);
 }
